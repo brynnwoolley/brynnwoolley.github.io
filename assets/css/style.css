@@ -602,32 +602,55 @@ section {
   color: #fff;
   font-size: 28px;
   text-align: center;
-  background: rgba(106, 153, 78, 0.75);
+  background: rgba(49, 78, 42, 0.95);
   transition: 0.3s;
   width: 50%;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(106, 153, 78, 0.95);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .portfolio .portfolio-wrap .portfolio-links a+a {
-  border-left: 1px solid #6A994E;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .portfolio .portfolio-wrap:hover::before {
-  top: 0;
+  /* Remove or comment out this block to prevent the opacity change */
+  /* content: "";
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
   left: 0;
   right: 0;
+  top: 0;
   bottom: 0;
-  opacity: 1;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0; */
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-links {
-  opacity: 1;
-  bottom: 0;
+  /* Remove or comment out this block to remove the link icon and the effect */
+  /* opacity: 1;
+  bottom: 0; */
 }
 
+.portfolio .portfolio-wrap .portfolio-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(49, 78, 42, 0.95);
+  color: #fff;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.portfolio .portfolio-wrap:hover .portfolio-title {
+  opacity: 1;
+}
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
