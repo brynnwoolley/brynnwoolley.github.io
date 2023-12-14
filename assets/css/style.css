@@ -1127,3 +1127,67 @@ section {
     padding-right: 20px 15px;
   }
 }
+/*--------------------------------------------------------------
+# Academic Article Class
+--------------------------------------------------------------*/
+.article-academic {
+  font-family: "Open Sans", sans-serif; /* consistent with body font */
+  color: #272829; /* consistent with general color scheme */
+  background: #FCFAF3; /* light background for readability */
+  padding: 20px; /* padding for content */
+  margin-bottom: 30px; /* space below the article */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+}
+
+.article-academic h2, .article-academic h3, .article-academic h4 {
+  font-family: "Raleway", sans-serif; /* headers font consistent with general styling */
+  color: #314E2A; /* dark green color for headers */
+}
+
+.article-academic p {
+  line-height: 1.6; /* improved readability for paragraphs */
+}
+
+.article-academic a {
+  color: #6A994E; /* consistent with general link color */
+  text-decoration: underline; /* underline for clarity */
+}
+
+.article-academic a:hover {
+  color: #97B863; /* lighter green on hover */
+}
+
+.article-academic ul,
+.article-academic ol {
+  padding-left: 20px; /* indenting lists */
+}
+
+.article-academic .figure {
+  text-align: center; /* centering figures */
+  margin: 20px 0; /* space around figures */
+}
+
+.article-academic .figure img {
+  max-width: 100%; /* ensuring images are responsive */
+  height: auto; /* maintaining aspect ratio */
+}
+
+.article-academic .figure-caption {
+  font-size: 14px; /* smaller text for captions */
+  color: #6A994E; /* green text for captions */
+}
+/*--------------------------------------------------------------
+# Code snippet Class
+--------------------------------------------------------------*/
+.code-snippet {
+  font-family: "Courier New", Courier, monospace; /* Monospace font for code */
+  background-color: #f4f4f4; /* Light grey background */
+  color: #272829; /* Dark text color for readability */
+  padding: 10px; /* Padding inside the snippet box */
+  border-left: 5px solid #6A994E; /* Left border for style */
+  overflow-x: auto; /* Enables horizontal scrolling for long lines of code */
+  display: block; /* Makes the snippet a block element */
+  white-space: pre; /* Preserves spaces and line breaks */
+  margin-top: 10px; /* Margin above the snippet */
+  margin-bottom: 10px; /* Margin below the snippet */
+}
