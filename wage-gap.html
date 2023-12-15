@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Analyzing the Gender Pay Gap</title>
+  <title>Brynn Woolley</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -41,6 +38,9 @@
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
@@ -49,22 +49,20 @@
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Brynn Woolley</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/brynnwoolley/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://twitter.com/bringineer" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://github.com/brynnwoolley" class="github"><i class="bx bxl-github"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About Me</span></a></li>
+          <li><a href="index.html#resume" class="nav-link scrollto"><i class="bi bi-map"></i><span>Experience</span></a></li>
+          <li><a href="index#skills" class="nav-link scrollto"><i class="bi bi-tools"></i> <span>Skills</span></a></li>
+          <li><a href="index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+          <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -91,9 +89,11 @@
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
         <div class="row gy-4">
+          <h6>Modeling with Uncertainty and Data Project by: Brynn Woolley, Jane Housley, Jake Richards, & Spencer Chandler</h6>
           <div class="col-lg-12">
             <article class="article-academic"> 
               <script src="https://gist.github.com/brynnwoolley/1d66b105f020569bee45902501e3b650.js"></script>          
+              <!-- ======= 1 Introduction ======= -->
               <h3>1 Introduction</h3>
               <p> As the conversation about systemic sexism and gender bias grows, research on the existence of a wage gap becomes increasingly crucial. 
                 Economists such as Claudia Goldin, Francine Blau, and Lawrence Katz have conducted extensive studies investigating the factors contributing to 
@@ -112,7 +112,8 @@
                 Through this analysis, we aspire to contribute empirical evidence to the ongoing discourse surrounding gender-based income inequalities, 
                 offering insights that could inform policy initiatives and organizational strategies toward fostering greater fairness and equity in remuneration 
                 practices.</p>
-    
+              
+              <!-- ======= 2 Data Visualization ======= -->
               <h3>2 Data Visualization</h3>    
               <p>In our project, we began by loading the Glassdoor Gender Pay Gap dataset from Kaggle.com using pandas. The dataset is composed of data about 
                 employees from one company. The data is anonymous and reported by the anonymous-company so this creates no ethical issues or doubt in the 
@@ -129,40 +130,43 @@
                 pay gap is observable with basic information that would be considered by employers when considering salaries.</p>
                 <script src="https://gist.github.com/brynnwoolley/d1c68b4561b65bb65d6f2fe71c6cfbef.js"></script>
               
-                <h3>3 Analysis/Visualizations</h3>
-              <h4>3.1 Visualization of Data</h4>
-              <p>Before diving into the deep-end of regression and classification, we want to visualize aspects of the dataset that we found interesting. The 
-                first characteristic of the data we want to emphasize is the distribution of men and women in each job title.</p>
-              <pre class="code-snippet"><a href="https://gist.github.com/brynnwoolley/ab9f8c06c260200e07f861a1aec9ff12" target="_blank">job_bar_graph()</a></pre>
-              <img src="assets/img/portfolio/wage-gap/job-bar-graph.png" class="img-fluid" alt="">
+              <!-- ======= 3 Analysis/Visualizations ======= -->
+              <h3>3 Analysis/Visualizations</h3>
+                <!-- 3.1 Visualization of Data -->
+                <h4>3.1 Visualization of Data</h4>
+                  <p>Before diving into the deep-end of regression and classification, we want to visualize aspects of the dataset that we found interesting. The 
+                  first characteristic of the data we want to emphasize is the distribution of men and women in each job title.</p>
+                <pre class="code-snippet"><a href="https://gist.github.com/brynnwoolley/ab9f8c06c260200e07f861a1aec9ff12" target="_blank">job_bar_graph()</a></pre>
+                <center><img src="assets/img/portfolio/wage-gap/job-bar-graph.png" class="img-fluid" alt=""></center>
               
-              <p>We see that for the majority of job titles, there are approximately the same amount of men and women in those positions. However, there exist
+                <p>We see that for the majority of job titles, there are approximately the same amount of men and women in those positions. However, there exist
                  some jobs where the distribution of gender is heavily skewed, such as marketing associate, software engineer, and manager. While our dataset is 
                  too small to draw any conclusions about societal trends, we can conclude that not all positions at this company are equal in distribution of gender.</p>
-              <p>Another visual that we found important for the analysis of our data is comparison of pay between the genders in each job title. Below we visualize a 
+                <p>Another visual that we found important for the analysis of our data is comparison of pay between the genders in each job title. Below we visualize a 
                 bar graph where we show the difference between the average male total pay and average female total pay (male - female) for each position.</p>
-              <pre class="code-snippet"><a href="https://gist.github.com/brynnwoolley/5338de80df57b5ded26daa30b48e9062" target="_blank">salary_difference()</a></pre>
-              <img src="assets/img/portfolio/wage-gap/salary-difference.png" class="img-fluid" alt="">
-              <p>Being below the average pay of the opposite gender exists for both men and women as seen above. There are some positions where the average male
+                <pre class="code-snippet"><a href="https://gist.github.com/brynnwoolley/5338de80df57b5ded26daa30b48e9062" target="_blank">salary_difference()</a></pre>
+                <center><img src="assets/img/portfolio/wage-gap/salary-difference.png" class="img-fluid" alt=""></center>
+                <p>Being below the average pay of the opposite gender exists for both men and women as seen above. There are some positions where the average male
                  employee make more and some positions where the average female employee makes more. While this graph may appear to answer the original question 
                  of the existence of the gender pay graph, we recognize that salary is more complex than just job titles and genders. In the following sections we
                   analyze the other variables that come into play and their importances.</p>
-                  
+                
+                <!-- 3.2 Education Analysis -->
                 <h4>3.2 Education Analysis</h4>
                 <p>To observe the effects that gender has on pay, we analyze subsets of the original dataset grouping by education levels. To begin this 
                   analysis we provide a visual of the distributions of gender by education level.</p>
                 <pre class="code-snippet"><a href="https://gist.github.com/brynnwoolley/06c36975e8cce9757214da549f48fa83" target="_blank">distribution_show(df,label_encoder_education,"Education")</a></pre>
-                <img src="assets/img/portfolio/wage-gap/edu-analysis.png" class="img-fluid" alt="">
+                <center><img src="assets/img/portfolio/wage-gap/edu-analysis.png" class="img-fluid" alt=""></center>
                 <p>This bar graph depicts the counts of men and women in each education level in our dataset. We see that each education level has more than 
                   100 data points for both genders. Likewise, we observe that in this dataset the distribution of men and women is roughly equal. We want to 
                   make note that we provide this visual to provide a more-detailed glimpse into our dataset and we will not conduct an analysis of gender 
                   diversity in education. While that would be an interesting subject, it would require a larger dataset and more knowledge about the sampling
                    techniques used to make any reasonable conclusions.</p>
                 <p>As described above, to analyze the effects that gender plays in pay we used regression models to view the significance of the features and
-                   how gender compares. After breaking the data down by education levels and performing gridsearches for the optimal hyperparameters, the 
+                   w gender compares. After breaking the data down by education levels and performing gridsearches for the optimal hyperparameters, the 
                    results of the random forest regressor, boosted gradient regressor, and xgboost regressor for education are below:</p>
-                   <center>
-                    <h6>Education Regression Mean Squared Errors</h6>
+                <center>
+                  <h6>Education Regression Mean Squared Errors</h6>
                     <table border="1" style="width: 60%;">
                       <tr>
                         <th></th>
@@ -240,7 +244,7 @@
                   results. The accuracies for each model are displayed below.</p>
                   <center>
                     <h6>Education Classification Accuracy</h6>
-                    <table border="1" style="width: 60%;">
+                    <table border="1" style="width: 50%;">
                       <tr>
                         <th></th>
                         <th>H.S</th>
@@ -307,12 +311,390 @@
                     </table>
                   </center>
                 <p></p>
+                <p>Before we dive into the analysis, we want to make one note. Originally, we dropped base pay and bonus as features, replacing them with 
+                normalized pay. However, after comparison, the classification results did better with base pay and bonus in the dataset versus normalized pay. 
+                This is solely for this section and the dataset will return to as previously described in the following sections.</p>              
+                <p>
+                  From these classifiers, we see that base pay and bonuses consistently are important features in classifying between genders, especially those 
+                  with college degrees. Between the college pay regressor and gender classifier having gender and base pay in their most important features, 
+                  respectively, and accuracte results, we can conclude there is some form of pay disparity between the genders at the college level.</p>
+                <!-- 3.3 Department Analysis -->
+                <h4>3.3 Department Analysis</h4>
+                <p>We next focus in on differences in pay among different department levels. There are 5 different departments: Administration, Engineering, Management, 
+                  Operations, and Sales. We look first at the gender distribution in each department, displayed as a histogram. Then we use random forests, gradient boosting, 
+                  and xgboost to examine the most important features in the regressors and classifiers.</p>
+                <pre class="code-snippet"><a href="https://gist.github.com/brynnwoolley/06c36975e8cce9757214da549f48fa83" target="_blank">distribution_show(df,label_encoder_dept,"Dept")</a></pre>
+                <center><img src="assets/img/portfolio/wage-gap/dept-analysis.png" class="img-fluid" alt=""></center>
+                <p></p>
+                <center>
+                <h6>Department Regression Mean Squared Errors</h6>
+                <table border="1" style="width: 60%;">
+                  <tr>
+                    <th></th>
+                    <th>Operations</th>
+                    <th>Management</th>
+                    <th>Administration</th>
+                    <th>Sales</th>
+                    <th>Engineering</th>
+                  </tr>
+                  <tr>
+                    <td>RFR</td>
+                    <td>0.00976</td>
+                    <td>0.0100</td>
+                    <td>0.00789</td>
+                    <td>0.00653</td>
+                    <td>0.01056</td>
+                  </tr>
+                  <tr>
+                    <td>GBR</td>
+                    <td>0.0116</td>
+                    <td>0.00529</td>
+                    <td>0.00709</td>
+                    <td>0.00600</td>
+                    <td>0.0090</td>
+                  </tr>
+                  <tr>
+                    <td>XGBR</td>
+                    <td>0.00489</td>
+                    <td>0.0047</td>
+                    <td>0.00398</td>
+                    <td>0.00448</td>
+                    <td>0.0036</td>
+                  </tr>
+                </table>
+                </center>
+                  <p></p>
+                  <p>Since XGBR had the lowest Mean Squared Error for every department, we analyze the results of that regression.</p>
+                  <p></p>
+                  <center>
+                    <h6>Feature Importance of Departments using XGBoost Regression</h6>
+                    <table border="1" style="width: 70%;">
+                      <tr>
+                        <th>Ranking</th>
+                        <th>Operations</th>
+                          <th>Management</th>
+                          <th>Administration</th>
+                          <th>Sales</th>
+                          <th>Engineering</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Age: 0.41</td>
+                        <td>Seniority: 0.40</td>
+                        <td>Seniority: 0.51</td>
+                        <td>Seniority: 0.46</td>
+                        <td>Seniority: 0.50</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Seniority: 0.35</td>
+                        <td>Age: 0.27</td>
+                        <td>Age: 0.16</td>
+                        <td>Age: 0.25</td>
+                        <td>Age: 0.22</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td>Job Title: 0.14</td>
+                        <td>Job Title: 0.14</td>
+                        <td>Gender: 0.11</td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </center>
+                <p></p>
+                <p>Notice that Seniority, Age, and Job Title seem to be important features in determining Salary for an individual. Gender only appears as an important feature in the Sales department. Thus we can conclude that Gender is not a primary feature when determining salary in specific departments.</p>
+                    <center>
+                      <h6>Classification Accuracy of Departments</h6>
+                      <table border="1" style="width: 50%;">
+                        <tr>
+                          <th></th>
+                          <th>Operations</th>
+                          <th>Management</th>
+                          <th>Administration</th>
+                          <th>Sales</th>
+                          <th>Engineering</th>
+                        </tr>
+                        <tr>
+                          <td>RFC</td>
+                          <td>0.57</td>
+                          <td>0.62</td>
+                          <td>0.41</td>
+                          <td>0.61</td>
+                          <td>0.62</td>
+                        </tr>
+                        <tr>
+                          <td>GBC</td>
+                          <td>0.62</td>
+                          <td>0.53</td>
+                          <td>0.51</td>
+                          <td>0.67</td>
+                          <td>0.56</td>
+                        </tr>
+                        <tr>
+                          <td>XGBC</td>
+                          <td>0.67</td>
+                          <td>0.62</td>
+                          <td>0.42</td>
+                          <td>0.64</td>
+                          <td>0.51</td>
+                        </tr>
+                      </table>
+                    </center>
+                  <p></p>
+                  <p>We will examine the most important features of XGBoost on Operations and Management, Gradient Boost on Administration and Sales, and Random Forest on Engineering because these provide the highest accuracy.</p>
+                  <center>
+                    <h6>Feature Importance of Departments using XGBoost Regression</h6>
+                    <table border="1" style="width: 70%;">
+                      <tr>
+                        <th>Ranking</th>
+                        <th>Operations</th>
+                          <th>Management</th>
+                          <th>Administration</th>
+                          <th>Sales</th>
+                          <th>Engineering</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Seniority: 0.23</td>
+                        <td>Job Title: 0.28</td>
+                        <td>NormComp: 0.38</td>
+                        <td>NormComp: 0.30</td>
+                        <td>NormComp: 0.26/td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>PerfEval: 0.17</td>
+                        <td>NormComp: 0.22</td>
+                        <td>Age: 0.23</td>
+                        <td>Job Title: 0.30</td>
+                        <td>Age: 0.24</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Job Title: 0.17</td>
+                        <td>Age: 0.16</td>
+                        <td>Age: 0.22</td>
+                        <td>Job Title: 0.18</td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </center>
+                  <p></p>
+                  <p>Note that the accuracy for each of these departments is slightly above 0.5, meaning that predicting gender using classification trees is slightly better than random. The most important features in predicting gender tend to be NormalizedTotalComp, Job Title, and Age. This means that total compensation is an important feature in predicting gender, but we must avoid extrapolating to claim this is evidence of the wage gap. We recognize that there may be other societal factors such as education, seniority, or age that may result in a lower compensation for an women in the workplace. In other words, if we claim that Total Compensation being an important feature in predicting gender is evidence of the wage gap, we are forgetting that different compensation between men and women may be a result of different education levels, job titles, or seniority levels, and those areas should be further examined to make a strong conclusion about the wage gap.</p>
+                
+                  <!-- 3.4 Complete Dataset Analysi --> 
+                  <h4>3.4 Complete Dataset Analysis</h4>
+                  <p>After performing the analyses above on different subsets of the data, we sought to observe the gender pay gap from a more holistic view, using the whole dataset. To save space, we have condensed the results into tables below but the results can be replicated using the code found in the attached .py file. Beginning with classification the accuracies and most important features of each algorithm are displayed below:</p>
+                  <center>
+                    <h6>Classification Results On Complete Dataset</h6>
+                    <table border="1" style="width: 30%;">
+                      <tr>
+                        <th>Classifier</th>
+                        <th>Accuracy</th>
+                      </tr>
+                      <tr>
+                        <td>RFC</td>
+                        <td>0.68</td>
+                      </tr>
+                      <tr>
+                        <td>GBC</td>
+                        <td>0.65</td>
+                      </tr>
+                      <tr>
+                        <td>XGBC</td>
+                        <td>0.69</td>
+                      </tr>
+                    </table>
+                  </center>
+                  <p></p>
+                  <center>
+                    <h6>XGBC Most Important Features</h6>
+                    <table border="1" style="width: 30%;">
+                      <tr>
+                        <th>Feature</th>
+                        <th>Importance</th>
+                      </tr>
+                      <tr>
+                        <td>Job Title</td>
+                        <td>0.49</td>
+                      </tr>
+                      <tr>
+                        <td>NormPay</td>
+                        <td>0.14</td>
+                      </tr>
+                      <tr>
+                        <td>Age</td>
+                        <td>0.13</td>
+                      </tr>
+                    </table>
+                  </center>
+                  <p></p>
+                  <p> We see that every classifier did better then randomly guessing, with XGBC having the best results. For the classification problem, the normalized total pay was the second most important feature.</p>
+                  <p>Below are the results from using regression to predict normalized pay.</p>
+                  <center>
+                    <h6>Regression Results On Complete Dataset</h6>
+                    <table border="1" style="width: 30%;">
+                      <tr>
+                        <th>Regressor</th>
+                        <th>MSE</th>
+                      </tr>
+                      <tr>
+                        <td>RFR</td>
+                        <td>0.0048</td>
+                      </tr>
+                      <tr>
+                        <td>GBR</td>
+                        <td>0.0048</td>
+                      </tr>
+                      <tr>
+                        <td>XGBR</td>
+                        <td>0.0029</td>
+                      </tr>
+                    </table>
+                  </center>
+                  <p></p>
+                  <center>
+                    <h6>XGBR Most Important Features</h6>
+                    <table border="1" style="width: 30%;">
+                      <tr>
+                        <th>Feature</th>
+                        <th>Importance</th>
+                      </tr>
+                      <tr>
+                        <td>Seniority</td>
+                        <td>0.52</td>
+                      </tr>
+                      <tr>
+                        <td>Age</td>
+                        <td>0.19</td>
+                      </tr>
+                      <tr>
+                        <td>Job Title</td>
+                        <td>0.13</td>
+                      </tr>
+                    </table>
+                  </center>
+                  <p></p>
+                  <p>We see that gender was not one of the top three most important features. Gender had an importance of approximately 0.09. This would make sense as gender would play a minor part in pay under the assumptions of the gender pay gap. Other features such as job title and seniority make sense in establishing pay as those are more connected with one’s duties and loyalty to the company.</p>
+                  <p>While these results do provide some evidence into a disparity in pay between the genders, there is no solid way to establish which way this disparity goes. To establish the direction of the disparity, we would have to analyze the spits at each node, which isn’t feasible.</p>
+                  <!-- 3.5 OLS Analysi --> 
+                  <h4>3.5 OLS Analysis</h4>
+                  <p>In our comprehensive analysis of the gender pay gap, we conducted ordinary least squares (OLS) regression analysis to quantitatively measure the effects of various factors on normalized total compensation. This study complements our previous machine learning models and provides a clearer mathematical perspective on the variables affecting earnings levels. Below is a simplistic OLS model that uses job title, gender, age, performance evaluation, education, department, and seniority as independent variables to estimate the dependent variable of normalized compensation.</p>
+                  <script src="https://gist.github.com/brynnwoolley/7559a0aff2ed773d80fbeb4fe1c182fb.js"></script>
+                  <pre class="code-snippet">
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     NormalizedTotalComp   R-squared:                       0.633
+Model:                             OLS   Adj. R-squared:                  0.631
+Method:                  Least Squares   F-statistic:                     343.2
+Date:                 Wed, 06 Dec 2023   Prob (F-statistic):          1.33e-213
+Time:                         03:15:04   Log-Likelihood:                 1073.0
+No. Observations:                 1000   AIC:                            -2134.
+Df Residuals:                      994   BIC:                            -2104.
+Df Model:                            5                                         
+Covariance Type:             nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.1640      0.012     14.176      0.000       0.141       0.187
+Gender         0.0521      0.005      9.848      0.000       0.042       0.062
+Age            0.0053      0.000     28.611      0.000       0.005       0.006
+PerfEval       0.0040      0.002      2.138      0.033       0.000       0.008
+Education      0.0142      0.002      5.924      0.000       0.009       0.019
+Seniority      0.0536      0.002     28.418      0.000       0.050       0.057
+==============================================================================
+Omnibus:                       30.419   Durbin-Watson:                   1.957
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               32.405
+Skew:                           0.427   Prob(JB):                     9.19e-08
+Kurtosis:                       3.216   Cond. No.                         196.
+==============================================================================
 
-                  
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</pre>
+            
+            <p>The model's R-squared value of 0.637 explains 63.7% of the variation in compensation. The model results also indicate that Gender significantly correlates to compensation, with a 5.11% increase for a specific gender. The model also indicates that Job Title, Age, and Seniority also impact compensation, with Seniority having a strong positive relationship with each additional year leading to a 0.53% increase in compensation. Performance Evaluation and Education have smaller but significant effects (0.0040 and 0.0143), influencing compensation. Departmental variations in compensation exist (0.0043 coefficient), but they are less significant than Seniority and Gender.</p>
+            <p>This analysis confirms the influence of Gender and highlights the role of Age, Seniority, Job Title, Education, and Department in compensation. However, this analysis's limitations and critiques go beyond the complex dynamics that influence compensation. The primary critique is that several variables included in this regression are encoded data. This is more acceptable in ordinal data points, such as Education levels, where the assigned integers reflect the value of the assignment. However, in our encodings of nominal data points, such as Job Title and department, the assigned integer value has no real meaning in its assignment.</p>
+            <p>While this basic OLS model sheds light on critical factors affecting wages, its limitations highlight the need for a more informative and nuanced approach. To address this, we turn to quantile regression, which allows us to examine how these variables' impacts vary across different income distributions and better understand the underlying trends in compensation disparities.</p>
+            <p></p>
+            <center>
+              <h2>Quantile Regression Coefficients</h2>
+              <table border="1" style="width: 50%;">
+                <tr>
+                  <th></th>
+                  <th>0.25</th>
+                  <th>0.5</th>
+                  <th>0.75</th>
+                </tr>
+                <tr>
+                  <td>Intercept</td>
+                  <td>0.084456</td>
+                  <td>0.137970</td>
+                  <td>0.195391</td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td>0.046265</td>
+                  <td>0.042455</td>
+                  <td>0.042948</td>
+                </tr>
+                <tr>
+                  <td>JobTitle</td>
+                  <td>0.000267</td>
+                  <td>0.002806</td>
+                  <td>0.003955</td>
+                </tr>
+                <tr>
+                  <td>Age</td>
+                  <td>0.005184</td>
+                  <td>0.005352</td>
+                  <td>0.005235</td>
+                </tr>
+                <tr>
+                  <td>PerfEval</td>
+                  <td>0.008591</td>
+                  <td>0.003362</td>
+                  <td>0.002428</td>
+                </tr>
+                <tr>
+                  <td>Education</td>
+                  <td>0.011199</td>
+                  <td>0.016336</td>
+                  <td>0.016012</td>
+                </tr>
+                <tr>
+                  <td>Dept</td>
+                  <td>0.005535</td>
+                  <td>0.004135</td>
+                  <td>0.003120</td>
+                </tr>
+                <tr>
+                  <td>Seniority</td>
+                  <td>0.056841</td>
+                  <td>0.053406</td>
+                  <td>0.054394</td>
+                </tr>
+              </table>
+            </center>
+            <p></p>
+            <p>In our quantile analysis, we aimed to assess how various factors influence normalized total compensation across different income percentiles (25th, 50th, 75th), offering a more nuanced view of wage dynamics. Gender was consistently influential across all percentiles, with coefficients of 0.0463 at the 25th percentile, 0.0425 at the median (50th percentile), and 0.0429 at the 75th percentile. In contrast, the impact of Job Title strengthens as income rises, with coefficients ranging from 0.0003 to 0.0040 across percentiles. Meanwhile, Seniority, Age, and Education maintain their influence across percentiles, providing stability in compensation dynamics. Notably, the significance of Performance Evaluation peaks at the 25th percentile with a coefficient of 0.0086 but diminishes as income increases. This intricate analysis shows the varied nature of income disparities. While illuminating, it is important to acknowledge that our approach has limitations inherent to the dataset and methodology, suggesting potential for further research exploring additional factors and advanced statistical techniques.</p>
+            
+            <!-- ======= 4 Conclusion ======= -->
+            <h3>Conclusion</h3>
+            <p>Our comprehensive analysis, centered on exploring the impact of gender on salary and income levels, has yielded significant insights, shedding light on the intricacies of the gender wage gap. By meticulously applying machine learning techniques such as Random Forest Classifiers and Regressors, Gradient Boosting, and XGBoost, along with the application of Ordinary Least Squares (OLS) regression, we have untangled critical dimensions of this socio-economic issue.</p>
+            <p>Our findings indicate that factors like job title, education, department, seniority, and age play substantial roles in determining income levels, with gender being particularly impactful. The OLS regression results, with a notable R-squared value, emphasize that a significant portion of compensation variability can be attributed to these variables. This not only substantiates our initial hypothesis but also echoes the broader academic understanding of the wage gap.</p>
+            <p>In line with the project objectives, we have sought to answer our research questions using data analytics and machine learning techniques, providing a nuanced understanding of the factors influencing the wage gap. Our study, while limited by the scope of the data, offers a lens through which the complex nature of gender-based income disparities can be viewed, highlighting areas where policy and organizational reforms or advocacy could be most impactful.</p>
+            <p>As we conclude, we recognize the limitations inherent in our analysis, particularly regarding the dataset's scope and potential biases. Future research could build on our findings by incorporating a more diverse and extensive dataset, offering a more exhaustive view of the gender pay gap across different sectors and regions. Ultimately, our project stands as a testament to the power of data analytics and machine learning in dissecting and understanding complex socio-economic issues. It offers a data-driven foundation for further academic inquiry and informs potential policy-making, aiming to foster a more equitable and just society.</p>
+
+            <!-- ======= 5 Ethics ======= -->
+            <h3>Ethics</h3>
+            <p>As mentioned before, we do not belived that generalizations about this research can be drawn to provide a final answer to the question of the gender pay gap. However, we do believe that this research contributes to the conversation. We hoped to provide results that could further inform employers and managers to promote equality in the workplace. We also hope that the results of this study will be used responsibly and ethically and that our work will inspire others to research further into the existence of a gender wage gap.</p>
              
-              <h3>Conclusion</h3>
-                
-                
+            <!-- ======= References ======= -->
+            <h3>References</h3>
+            <p>[1] Wikimedia Foundation. (2023, December 14). Gender pay gap. Wikipedia.</p>
+              
     
               <!-- Add any additional sections or content as needed -->
             </article>
@@ -322,22 +704,6 @@
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
