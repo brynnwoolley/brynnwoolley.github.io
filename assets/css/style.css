@@ -352,6 +352,14 @@ section {
   color: #314E2A;
 }
 
+.about-bio p {
+  margin-bottom: 15px;
+}
+
+.about-bio p:last-child {
+  margin-bottom: 0;
+}
+
 .about .content ul {
   list-style: none;
   padding: 0;
