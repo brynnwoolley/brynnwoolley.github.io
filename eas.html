@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Brynn Woolley</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Brynn Woolley</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/brynnwoolley/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://infrall.engin.umich.edu/" class="lab" target="_blank"><i class="bi bi-mortarboard-fill"></i></a>
+          <a href="https://github.com/brynnwoolley" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About Me</span></a></li>
+          <li><a href="index.html#resume" class="nav-link scrollto"><i class="bi bi-map"></i><span>Experience</span></a></li>
+          <li><a href="index.html#skills" class="nav-link scrollto"><i class="bi bi-tools"></i> <span>Skills</span></a></li>
+          <li><a href="index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+          <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Modeling Rural Air Travel Choices with Small-Sample Data</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Essential Air Service Discrete Choice</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- ======= Sidebar ======= -->
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Graduate Coursework, University of Michigan (CEE 552: Travel Behavior Analysis & Forecasting)</li>
+                <li><strong>Collaborator</strong>: Karsten Van Fossan</li>
+                <li><strong>Data</strong>: DB1B Airline Origin &amp; Destination Survey (10% ticket sample, 2023); U.S. DOT Essential Air Service reports</li>
+                <li><strong>Tools</strong>: Python, Biogeme (maximum likelihood estimation)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ======= Main Content ======= -->
+          <div class="col-lg-8">
+
+            <div class="portfolio-description">
+              <h2>The Problem</h2>
+              <p>
+                The Essential Air Service program subsidizes flights connecting rural communities to major hubs,
+                and costs are rising — over $550M a year and climbing. Yet how passengers at these small airports
+                actually choose between their layover options is poorly understood, and the samples available for
+                any single airport are small: a few hundred origin-destination pairs at most, not the large panels
+                typical of urban travel-behavior research.
+              </p>
+
+              <h2>Approach</h2>
+              <p>
+                Using ticket data from the DB1B Survey, we built discrete choice models for three Essential Air
+                Service airports with two competing layover options each — Sault Ste. Marie, MI (CIU), Moab, UT
+                (CNY), and Sioux City, IA (SUX). After cleaning the data down to itineraries actually touching an
+                EAS airport and isolating each origin-destination pair's real alternatives, we estimated logit
+                models via maximum likelihood (Biogeme) to see how cost and distance drive which layover
+                passengers choose.
+              </p>
+
+              <div class="figure" data-aos="fade-up">
+                <img src="assets/img/portfolio/eas/Histogram_OriginDest_Counts.png" class="img-fluid" alt="Origin/destination ticket sample sizes by EAS airport">
+                <p class="figure-caption text-center">Sample sizes across EAS airports — CIU, CNY, and SUX had the largest ticket samples, which is why they were selected as case studies.</p>
+              </div>
+
+              <h2>Key Results</h2>
+              <ul>
+                <li>Across all three airports, <strong>distance was a far stronger, more statistically significant predictor</strong> of layover choice than cost</li>
+                <li>At CIU (148 O/D pairs) and CNY (106 O/D pairs), cost had no significant effect (p = 0.50 and p = 0.77) — travelers behaved as if price didn't factor in</li>
+                <li>SUX (103 O/D pairs) was the exception: cost was significant (p = 0.01), likely because it's not a captive market — Omaha is a 90-minute drive away and offers a competing option</li>
+                <li>Findings held despite each model resting on samples of roughly 100–150 observations, the kind of small-sample regime where estimates are easy to over-trust or dismiss without care</li>
+              </ul>
+
+              <div class="figure" data-aos="fade-up">
+                <img src="assets/img/portfolio/eas/DistanceVSCost.png" class="img-fluid" alt="Market distance vs. market fare scatter plots by carrier">
+                <p class="figure-caption text-center">Fare vs. distance by connecting carrier — the input relationship the choice models are built on.</p>
+              </div>
+
+              <h2>Why It Matters</h2>
+              <p>
+                This project is fundamentally about drawing reliable conclusions from small samples — knowing which
+                estimates to trust, which to treat cautiously, and why the same model structure can tell a
+                different story at different sites. That's a general skill, not a rural-aviation-specific one: it's
+                the same judgment call needed anywhere a test or model has to be interpreted from limited data.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
