@@ -43,9 +43,8 @@
         <h1 class="text-light"><a href="index.html">Brynn Woolley</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/brynnwoolley/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://twitter.com/bringineer" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+          <a href="https://infrall.engin.umich.edu/" class="lab" target="_blank"><i class="bi bi-mortarboard-fill"></i></a>
           <a href="https://github.com/brynnwoolley" class="github" target="_blank"><i class="bx bxl-github"></i></a>
-          <a href="https://www.instagram.com/brynnwoolley/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
 
@@ -54,10 +53,11 @@
           <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About Me</span></a></li>
           <li><a href="index.html#resume" class="nav-link scrollto"><i class="bi bi-map"></i><span>Experience</span></a></li>
+          <li><a href="index.html#skills" class="nav-link scrollto"><i class="bi bi-tools"></i> <span>Skills</span></a></li>
           <li><a href="index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
           <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
-      </nav><!-- .nav-menu --><!-- .nav-menu -->
+      </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
 
@@ -66,15 +66,13 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
-          <h2>IMT Optimization</h2>
+          <h2>Optimizing Highway Incident Response with Simulation</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>IMT Optimization</li>
           </ol>
         </div>
-
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -84,41 +82,78 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/imt/imt-details-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/imt/imt-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/imt/imt-details-3.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
+          <!-- ======= Sidebar ======= -->
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Transportation Research</li>
-                <li><strong>Repository URL</strong>: <a href="https://github.com/djarvis3/BYU_imt_optimization">github.com/djarvis3/BYU_imt_optimization</a></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Category:</strong> <span>Transportation Research — Brigham Young University</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Sponsor:</strong> <span>Utah Department of Transportation (UDOT)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Collaborators:</strong> <span>Gregory S. Macfarlane, Daniel Jarvis, Grant G. Schultz</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>MATSim, Java, custom dispatch &amp; network-change-event modules</span></li>
               </ul>
+              <div class="mt-3">
+                <a href="https://www.sciencedirect.com/science/article/pii/S1877050924012389" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">Procedia Computer Science, 2024</a>
+                <a href="https://rosap.ntl.bts.gov/view/dot/74034" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">UDOT Report UT-23.22</a>
+              </div>
             </div>
+          </div>
+
+          <!-- ======= Main Content ======= -->
+          <div class="col-lg-8">
+
             <div class="portfolio-description">
-              <h2>Research Project Description</h2>
+              <h2>The Problem</h2>
               <p>
-                Many regions have introduced Incident Management Teams (IMT) as a method to improve highway system operations, especially during peak periods when the user costs of incidents clogging roadways can be particularly high. IMT can respond quickly to incidents ranging from vehicle breakdowns to serious, multi-car collisions and aid other first response agencies to manage the traffic stream and return traffic to normal conditions CITE. In this research, we explore a micro-simulation approach for representing IMT response to incidents in a highway network. This approach relies on adaptations to the MATSim transportation modeling framework to represent both incidents and the IMT response, and is implemented in a scenario representing the Wasatch Front (Salt Lake City) region of Utah. the IMT program's performance along the Wasatch Front. The simulation aims to demonstrate how IMT effectiveness varies with changes in allocated resources as well as the concentration of incidents.
+                Incident Management Teams (IMTs)—vehicles that respond to highway crashes and breakdowns to
+                restore traffic flow—are well documented to reduce delay and cost. But almost all of that evidence
+                comes from small, after-the-fact case studies of individual incidents. No one had modeled how IMTs
+                perform across an entire regional highway network, which meant transportation agencies had no way
+                to test "what if" questions—like whether adding more IMT units is actually worth it—before
+                committing real budget to the decision.
+              </p>
+
+              <h2>Approach</h2>
+              <p>
+                We built a custom extension for MATSim, an open-source, agent-based traffic simulation framework,
+                that lets incidents occur stochastically across a regional network and dispatches the nearest
+                available IMT unit to respond. When a unit arrives, it restores a portion of the road's capacity in
+                stages, modeling how congestion actually clears as help arrives.
+              </p>
+
+              <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
+                <img src="assets/img/portfolio/imt/imt-fig-capacity-restoration.png" class="img-fluid" style="max-width:75%; height:auto;" alt="Line chart showing road link capacity restored in stages as first and second IMT units arrive at an incident">
+                <p class="figure-caption text-center">How the model simulates capacity recovery — each arriving IMT unit restores another share of the road's capacity.</p>
+              </div>
+
+              <p>
+                We applied this to Utah's Wasatch Front (Salt Lake City metro), comparing six scenarios across ten
+                simulated days each: no IMT response, the current 20-unit fleet, and a proposed 30-unit fleet, each
+                under both typical and elevated incident frequency.
+              </p>
+
+              <h2>Key Results</h2>
+              <ul>
+                <li>The current 20-unit IMT fleet reduced highway delay by <strong>18.2%</strong> compared to incidents with no response — an average savings of 4,232 vehicle-hours of delay per day</li>
+                <li>Expanding to 30 units increased that reduction to <strong>22.9%</strong>, saving 5,334 vehicle-hours per day</li>
+                <li>Average response time dropped from 15.0 minutes (20 units) to 11.0 minutes (30 units)—using a published cost model, that's roughly <strong>$3,700 in savings per incident</strong></li>
+                <li>The bigger fleet's benefit sharply cut the number of "bad" high-delay days, suggesting IMT expansion matters most for controlling worst-case outcomes, not typical ones</li>
+              </ul>
+
+              <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
+                <img src="assets/img/portfolio/imt/imt-fig-motorway-vhd.png" class="img-fluid" style="max-width:85%; height:auto;" alt="Scatter plot showing motorway vehicle-hours of delay across simulated scenarios, with group means marked, showing lower delay and fewer high-delay outlier days as IMT fleet size increases">
+                <p class="figure-caption text-center">Motorway delay across all simulated scenarios—larger fleets lower the average but especially cut the worst outlier days.</p>
+              </div>
+
+              <h2>Why It Matters</h2>
+              <p>
+                Most transportation agencies evaluate programs like this only after the fact, using whatever data
+                incidents happened to generate. This project builds the alternative: a simulation environment that
+                tests policy changes—more vehicles, different deployment strategies—before committing resources
+                to them.
               </p>
             </div>
+
           </div>
 
         </div>
@@ -127,8 +162,6 @@
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
-
-
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

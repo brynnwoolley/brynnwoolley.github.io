@@ -87,10 +87,10 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Graduate Coursework, University of Michigan (CEE 552: Travel Behavior Analysis & Forecasting)</li>
-                <li><strong>Collaborator</strong>: Karsten Van Fossan</li>
-                <li><strong>Data</strong>: DB1B Airline Origin &amp; Destination Survey (10% ticket sample, 2023); U.S. DOT Essential Air Service reports</li>
-                <li><strong>Tools</strong>: Python, Biogeme (maximum likelihood estimation)</li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Category:</strong> <span>Graduate Coursework, University of Michigan (CEE 552: Travel Behavior Analysis &amp; Forecasting)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Collaborator:</strong> <span>Karsten Van Fossan</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Data:</strong> <span>DB1B Airline Origin &amp; Destination Survey (10% ticket sample, 2023); U.S. DOT Essential Air Service reports</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>Python, Biogeme (maximum likelihood estimation)</span></li>
               </ul>
             </div>
           </div>
@@ -102,7 +102,7 @@
               <h2>The Problem</h2>
               <p>
                 The Essential Air Service program subsidizes flights connecting rural communities to major hubs,
-                and costs are rising — over $550M a year and climbing. Yet how passengers at these small airports
+                and costs are rising—over $550M a year and climbing. Yet how passengers at these small airports
                 actually choose between their layover options is poorly understood, and the samples available for
                 any single airport are small: a few hundred origin-destination pairs at most, not the large panels
                 typical of urban travel-behavior research.
@@ -118,30 +118,32 @@
                 passengers choose.
               </p>
 
-              <div class="figure" data-aos="fade-up">
-                <img src="assets/img/portfolio/eas/Histogram_OriginDest_Counts.png" class="img-fluid" alt="Origin/destination ticket sample sizes by EAS airport">
+              <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
+                <img src="assets/img/portfolio/eas/Histogram_OriginDest_Counts.png" class="img-fluid" style="max-width:80%; height:auto;" alt="Origin/destination ticket sample sizes by EAS airport">
                 <p class="figure-caption text-center">Sample sizes across EAS airports — CIU, CNY, and SUX had the largest ticket samples, which is why they were selected as case studies.</p>
               </div>
 
               <h2>Key Results</h2>
               <ul>
                 <li>Across all three airports, <strong>distance was a far stronger, more statistically significant predictor</strong> of layover choice than cost</li>
-                <li>At CIU (148 O/D pairs) and CNY (106 O/D pairs), cost had no significant effect (p = 0.50 and p = 0.77) — travelers behaved as if price didn't factor in</li>
-                <li>SUX (103 O/D pairs) was the exception: cost was significant (p = 0.01), likely because it's not a captive market — Omaha is a 90-minute drive away and offers a competing option</li>
-                <li>Findings held despite each model resting on samples of roughly 100–150 observations, the kind of small-sample regime where estimates are easy to over-trust or dismiss without care</li>
+                <li>At CIU (148 O/D pairs) and CNY (106 O/D pairs), cost had no significant effect (p = 0.50 and p = 0.77)—travelers behaved as if price didn't factor in</li>
+                <li>SUX (103 O/D pairs) was the exception: cost was significant (p = 0.01), likely because it's not a captive market—Omaha is a 90-minute drive away and offers a competing option</li>
+                <li>Findings held despite each model resting on samples of roughly 100–150 observations per airport</li>
               </ul>
 
-              <div class="figure" data-aos="fade-up">
-                <img src="assets/img/portfolio/eas/DistanceVSCost.png" class="img-fluid" alt="Market distance vs. market fare scatter plots by carrier">
+              <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
+                <img src="assets/img/portfolio/eas/DistanceVSCost.png" class="img-fluid" style="max-width:80%; height:auto;" alt="Market distance vs. market fare scatter plots by carrier">
                 <p class="figure-caption text-center">Fare vs. distance by connecting carrier — the input relationship the choice models are built on.</p>
               </div>
 
               <h2>Why It Matters</h2>
               <p>
-                This project is fundamentally about drawing reliable conclusions from small samples — knowing which
-                estimates to trust, which to treat cautiously, and why the same model structure can tell a
-                different story at different sites. That's a general skill, not a rural-aviation-specific one: it's
-                the same judgment call needed anywhere a test or model has to be interpreted from limited data.
+                Every model here rests on 100–150 observations per airport. 
+                At that scale, a single mis-specified alternative or an unnoticed outlier can flip a coefficient's significance, 
+                so validating the choice set and checking robustness mattered as much as the estimation itself. 
+                The results themselves have real policy weight: distance consistently outweighed cost in shaping traveler choice, 
+                meaning EAS subsidy and routing decisions built around price sensitivity may be optimizing for the wrong variable. 
+                Getting that right—and trusting it—depends on taking the small-sample problem seriously in the first place.
               </p>
             </div>
 
