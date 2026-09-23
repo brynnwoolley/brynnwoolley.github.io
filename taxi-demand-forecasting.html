@@ -67,10 +67,10 @@
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Optimizing Highway Incident Response with Simulation</h2>
+          <h2>Forecasting NYC Taxi Demand Using Deep Learning</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>IMT Optimization</li>
+            <li>Taxi Demand Forecasting</li>
           </ol>
         </div>
       </div>
@@ -87,14 +87,12 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Category:</strong> <span><a href="https://cce.byu.edu/transportation-engineering">Transportation Research — Brigham Young University</a></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Sponsor:</strong> <span>Utah Department of Transportation (UDOT)</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Collaborators:</strong> <span>Gregory S. Macfarlane, Daniel Jarvis, Grant G. Schultz</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>MATSim, Java, custom dispatch &amp; network-change-event modules</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Category:</strong> <span>Graduate Coursework, University of Michigan (STATS 507)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Data:</strong> <span>NYC Yellow Taxi Trip Data, Jan 2019 – Feb 2020</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>PyTorch, LSTM, Transformer (self-attention)</span></li>
               </ul>
               <div class="mt-3">
-                <a href="https://www.sciencedirect.com/science/article/pii/S1877050924012389" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">Procedia Computer Science, 2024</a>
-                <a href="https://rosap.ntl.bts.gov/view/dot/74034" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">UDOT Report UT-23.22</a>
+                <a href="https://github.com/brynnwoolley/stats507-coursework/tree/main" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">View Code on GitHub</a>
               </div>
             </div>
           </div>
@@ -105,52 +103,49 @@
             <div class="portfolio-description">
               <h2>The Problem</h2>
               <p>
-                Incident Management Teams (IMTs)—vehicles that respond to highway crashes and breakdowns to
-                restore traffic flow—are well documented to reduce delay and cost. But almost all of that evidence
-                comes from small, after-the-fact case studies of individual incidents. No one had modeled how IMTs
-                perform across an entire regional highway network, which meant transportation agencies had no way
-                to test "what if" questions—like whether adding more IMT units is actually worth it—before
-                committing real budget to the decision.
+                Short-term taxi demand forecasting helps cities and fleet operators position vehicles before demand
+                spikes rather than reacting after the fact. Deep sequential models are a natural fit for this since
+                demand has strong temporal patterns, but the two dominant architectures—LSTMs and Transformers—come
+                with a real tradeoff. Transformers can capture longer-range patterns through self-attention,
+                but at meaningfully higher computational cost. I wanted to quantify that tradeoff directly rather
+                than assume it.
               </p>
 
               <h2>Approach</h2>
               <p>
-                We built a custom extension for MATSim, an open-source, agent-based traffic simulation framework,
-                that lets incidents occur stochastically across a regional network and dispatches the nearest
-                available IMT unit to respond. When a unit arrives, it restores a portion of the road's capacity in
-                stages, modeling how congestion actually clears as help arrives.
+                Using a year-plus of NYC Yellow Taxi trip data aggregated to the zone-hour level, I trained a
+                univariate LSTM and a Transformer encoder side by side on identical inputs—lagged demand (1, 2, 3,
+                and 24 hours back) plus hour-of-day and day-of-week—to predict the next hour's pickups in each
+                zone. Same data splits, same preprocessing, same loss function, so any difference in outcome came
+                from the architecture itself, not the setup.
               </p>
 
               <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
-                <img src="assets/img/portfolio/imt/imt-fig-capacity-restoration.png" class="img-fluid" style="max-width:75%; height:auto;" alt="Line chart showing road link capacity restored in stages as first and second IMT units arrive at an incident">
-                <p class="figure-caption text-center">How the model simulates capacity recovery — each arriving IMT unit restores another share of the road's capacity.</p>
+                <img src="assets/img/portfolio/taxi/taxi-fig-training-loss.png" class="img-fluid" style="max-width:85%; height:auto;" alt="Line chart showing training loss over 10 epochs for LSTM and Transformer models, with the Transformer starting lower but the LSTM catching up and matching it by the final epoch">
+                <p class="figure-caption text-center">Both models converge within 10 epochs — the Transformer starts faster, but the LSTM catches up by the end.</p>
               </div>
-
-              <p>
-                We applied this to Utah's Wasatch Front (Salt Lake City metro), comparing six scenarios across ten
-                simulated days each: no IMT response, the current 20-unit fleet, and a proposed 30-unit fleet, each
-                under both typical and elevated incident frequency.
-              </p>
 
               <h2>Key Results</h2>
               <ul>
-                <li>The current 20-unit IMT fleet reduced highway delay by <strong>18.2%</strong> compared to incidents with no response — an average savings of 4,232 vehicle-hours of delay per day</li>
-                <li>Expanding to 30 units increased that reduction to <strong>22.9%</strong>, saving 5,334 vehicle-hours per day</li>
-                <li>Average response time dropped from 15.0 minutes (20 units) to 11.0 minutes (30 units)—using a published cost model, that's roughly <strong>$3,700 in savings per incident</strong></li>
-                <li>The bigger fleet's benefit sharply cut the number of "bad" high-delay days, suggesting IMT expansion matters most for controlling worst-case outcomes, not typical ones</li>
+                <li>Overall, the Transformer edged out the LSTM on accuracy — RMSE 0.2450 vs. 0.2502, MAE 0.1034 vs. 0.1061 — but took <strong>over 4× longer to train</strong> (157s vs. 39s) and nearly 2× longer to evaluate</li>
+                <li>That overall edge didn't hold up where it mattered most: across the 20 highest-error zones, the <strong>LSTM had lower error than the Transformer in every single one</strong> — the Transformer's aggregate advantage came entirely from the easier, more typical zones</li>
+                <li>Both models produced residuals tightly centered at zero, indicating neither was systematically biased</li>
+                <li>Net read: the Transformer's marginal accuracy gain doesn't clearly justify its cost, and it's specifically weaker exactly where robustness matters 
+                    most—volatile, high-demand zones</li>
               </ul>
 
               <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
-                <img src="assets/img/portfolio/imt/imt-fig-motorway-vhd.png" class="img-fluid" style="max-width:85%; height:auto;" alt="Scatter plot showing motorway vehicle-hours of delay across simulated scenarios, with group means marked, showing lower delay and fewer high-delay outlier days as IMT fleet size increases">
-                <p class="figure-caption text-center">Motorway delay across all simulated scenarios—larger fleets lower the average but especially cut the worst outlier days.</p>
+                <img src="assets/img/portfolio/taxi/taxi-fig-zone-mae.png" class="img-fluid" style="max-width:95%; height:auto;" alt="Bar chart comparing LSTM and Transformer mean absolute error across the 20 highest-error taxi zones, with LSTM showing lower error than the Transformer in every zone shown">
+                <p class="figure-caption text-center">In the hardest-to-predict zones, the LSTM was consistently more accurate than the Transformer — the opposite of the overall trend.</p>
               </div>
 
               <h2>Why It Matters</h2>
               <p>
-                Most transportation agencies evaluate programs like this only after the fact, using whatever data
-                incidents happened to generate. This project builds the alternative: a simulation environment that
-                tests policy changes—more vehicles, different deployment strategies—before committing resources
-                to them.
+                The headline number here (Transformer wins on RMSE) is true but <strong>incomplete</strong>, and a model choice made
+                on that number alone would pick the architecture that's actually less reliable in the highest-stakes
+                zones. That's the same judgment call that matters anywhere a model gets deployed under real
+                constraints—an aggregate metric can hide exactly where a model breaks down, and catching that
+                requires looking past the summary statistic to where the errors actually live.
               </p>
             </div>
 

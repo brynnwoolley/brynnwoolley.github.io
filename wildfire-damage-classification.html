@@ -67,10 +67,10 @@
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Optimizing Highway Incident Response with Simulation</h2>
+          <h2>Predicting Wildfire Damage from Mobility Data Using Machine Learning</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>IMT Optimization</li>
+            <li>Wildfire Damage Classification</li>
           </ol>
         </div>
       </div>
@@ -87,15 +87,11 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Category:</strong> <span><a href="https://cce.byu.edu/transportation-engineering">Transportation Research — Brigham Young University</a></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Sponsor:</strong> <span>Utah Department of Transportation (UDOT)</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Collaborators:</strong> <span>Gregory S. Macfarlane, Daniel Jarvis, Grant G. Schultz</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>MATSim, Java, custom dispatch &amp; network-change-event modules</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Category:</strong> <span>Graduate Coursework, University of Michigan (CEE 554: Data Mining in Transportation)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Collaborators:</strong> <span>Phillip Chacon, Margaret Miles</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Data:</strong> <span>Facebook Population During Crisis (Data for Good); CAL FIRE Damage Inspection (DINS) records, 2025 Palisades Fire</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Tools:</strong> <span>Python, Random Forest, XGBoost, scikit-learn</span></li>
               </ul>
-              <div class="mt-3">
-                <a href="https://www.sciencedirect.com/science/article/pii/S1877050924012389" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">Procedia Computer Science, 2024</a>
-                <a href="https://rosap.ntl.bts.gov/view/dot/74034" target="_blank" style="display:inline-block; background:#edf9e4; color:#314E2A; padding:6px 14px; border-radius:4px; font-weight:600; font-size:14px; margin:0 6px 6px 0; text-decoration:none;">UDOT Report UT-23.22</a>
-              </div>
             </div>
           </div>
 
@@ -105,52 +101,49 @@
             <div class="portfolio-description">
               <h2>The Problem</h2>
               <p>
-                Incident Management Teams (IMTs)—vehicles that respond to highway crashes and breakdowns to
-                restore traffic flow—are well documented to reduce delay and cost. But almost all of that evidence
-                comes from small, after-the-fact case studies of individual incidents. No one had modeled how IMTs
-                perform across an entire regional highway network, which meant transportation agencies had no way
-                to test "what if" questions—like whether adding more IMT units is actually worth it—before
-                committing real budget to the decision.
+                After a wildfire, emergency managers need damage estimates quickly to unlock
+                federal and state disaster funding. But the standard sources are both slow: satellite imagery is
+                quick but coarse and unreliable for partial damage, while ground inspections are accurate but can't
+                start until an area is declared safe, which can take weeks. Meanwhile, mobility data is being
+                collected passively and in real time, and nobody had used it to fill that gap.
               </p>
 
               <h2>Approach</h2>
               <p>
-                We built a custom extension for MATSim, an open-source, agent-based traffic simulation framework,
-                that lets incidents occur stochastically across a regional network and dispatches the nearest
-                available IMT unit to respond. When a unit arrives, it restores a portion of the road's capacity in
-                stages, modeling how congestion actually clears as help arrives.
+                Using population data from the 2025 Palisades Fire, we tracked how each affected area's population
+                dropped and recovered relative to its pre-fire baseline, then mapped that against 2,913 CAL FIRE
+                building-damage inspection records at the same location. From the population trends alone—depth of
+                the drop, timing of the biggest loss, volatility, recovery pattern—we engineered features and
+                trained classifiers to predict whether a building was habitable or destroyed.
               </p>
 
               <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
-                <img src="assets/img/portfolio/imt/imt-fig-capacity-restoration.png" class="img-fluid" style="max-width:75%; height:auto;" alt="Line chart showing road link capacity restored in stages as first and second IMT units arrive at an incident">
-                <p class="figure-caption text-center">How the model simulates capacity recovery — each arriving IMT unit restores another share of the road's capacity.</p>
+                <img src="assets/img/portfolio/wildfire/wildfire-fig-tile-trace.png" class="img-fluid" style="max-width:90%; height:auto;" alt="Time series showing population percent change and mobility signal for a Bing tile with 57% building destruction, showing a sharp drop during evacuation and gradual partial recovery">
+                <p class="figure-caption text-center">What the signal looks like: population drops sharply during evacuation and only partially recovers in a heavily-damaged area.</p>
               </div>
-
-              <p>
-                We applied this to Utah's Wasatch Front (Salt Lake City metro), comparing six scenarios across ten
-                simulated days each: no IMT response, the current 20-unit fleet, and a proposed 30-unit fleet, each
-                under both typical and elevated incident frequency.
-              </p>
 
               <h2>Key Results</h2>
               <ul>
-                <li>The current 20-unit IMT fleet reduced highway delay by <strong>18.2%</strong> compared to incidents with no response — an average savings of 4,232 vehicle-hours of delay per day</li>
-                <li>Expanding to 30 units increased that reduction to <strong>22.9%</strong>, saving 5,334 vehicle-hours per day</li>
-                <li>Average response time dropped from 15.0 minutes (20 units) to 11.0 minutes (30 units)—using a published cost model, that's roughly <strong>$3,700 in savings per incident</strong></li>
-                <li>The bigger fleet's benefit sharply cut the number of "bad" high-delay days, suggesting IMT expansion matters most for controlling worst-case outcomes, not typical ones</li>
+                <li>Mobility-based features alone predicted building damage with <strong>AUC &gt; 0.84</strong> (Random Forest and XGBoost)—before adding any location information</li>
+                <li>Adding latitude/longitude sharpened this considerably: out-of-sample error dropped to as low as 0.14–0.18, and ROC curves for the top models hugged the top-left corner</li>
+                <li>Random Forest — chosen as the best overall model for its balance of accuracy and interpretability — reached <strong>85.7% accuracy</strong> and a Kappa of 0.71</li>
+                <li>Mobility-derived features (maximum population drop, total loss, timing of the loss) remained meaningfully predictive even after location was added—the signal wasn't just "where the fire was"</li>
+                <li>A second model testing <em>delayed</em> population return (&gt;21 days post-evacuation) reached AUC up to 0.76 — a weaker but still useful signal</li>
               </ul>
 
               <div class="figure" data-aos="fade-up" style="padding: 20px 40px; text-align:center;">
-                <img src="assets/img/portfolio/imt/imt-fig-motorway-vhd.png" class="img-fluid" style="max-width:85%; height:auto;" alt="Scatter plot showing motorway vehicle-hours of delay across simulated scenarios, with group means marked, showing lower delay and fewer high-delay outlier days as IMT fleet size increases">
-                <p class="figure-caption text-center">Motorway delay across all simulated scenarios—larger fleets lower the average but especially cut the worst outlier days.</p>
+                <img src="assets/img/portfolio/wildfire/wildfire-fig-model-comparison.png" class="img-fluid" style="max-width:95%; height:auto;" alt="Bar chart comparing model out-of-sample error and ROC curve comparison for damage classification models trained with spatial features, showing Random Forest, XGBoost, and KNN clustering near the top-left corner">
+                <p class="figure-caption text-center">Model performance after adding location — error drops sharply and top models separate cleanly from chance.</p>
               </div>
 
               <h2>Why It Matters</h2>
               <p>
-                Most transportation agencies evaluate programs like this only after the fact, using whatever data
-                incidents happened to generate. This project builds the alternative: a simulation environment that
-                tests policy changes—more vehicles, different deployment strategies—before committing resources
-                to them.
+                This is the same core problem as monitoring any safety-critical system in real time: the
+                authoritative ground truth is slow to arrive, but a passively-collected proxy signal is available
+                immediately—and the question is how much you can actually trust it. Here, that meant validating
+                whether mobility data could substitute for ground inspections during a disaster response window;
+                elsewhere, it's the same judgment call anywhere fleet or sensor data has to stand in for slower,
+                more authoritative information.
               </p>
             </div>
 
